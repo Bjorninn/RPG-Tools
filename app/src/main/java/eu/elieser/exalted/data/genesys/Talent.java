@@ -157,4 +157,9 @@ public class Talent
     {
         this.subActivation = subActivation;
     }
+
+    public boolean hasKeywords()
+    {
+        return keywords != null && !keywords.isEmpty();
+    }
 }

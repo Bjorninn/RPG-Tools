@@ -72,7 +72,7 @@ public class CharmDetailScene extends Scene<CharmDetailLogic>
 
         loadCharm(charm, view);
 
-        Button backButton = (Button) view.findViewById(R.id.back_button);
+        Button backButton = view.findViewById(R.id.back_button);
         backButton.setOnClickListener(new View.OnClickListener()
         {
             @Override

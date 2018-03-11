@@ -1,9 +1,13 @@
 package eu.elieser.exalted.scene.genesys;
 
 import android.os.Bundle;
+import android.os.Debug;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import eu.elieser.exalted.R;
@@ -12,6 +16,7 @@ import eu.elieser.exalted.data.genesys.GenesysDataStore;
 import eu.elieser.exalted.data.genesys.Talent;
 import eu.elieser.exalted.genesys.talents.TalentHelper;
 import eu.elieser.exalted.logic.genesys.GenesysTalentLogic;
+import eu.elieser.exalted.navigation.Navigator;
 import eu.elieser.exalted.scene.Scene;
 
 /**
@@ -61,21 +66,33 @@ public class GenesysTalentScene extends Scene<GenesysTalentLogic>
         Talent talent = GenesysDataStore.getInstance().getTalent(talentName);
 
         LoadTalent(talent);
+
+        Button backButton = view.findViewById(R.id.talent_back_button);
+        backButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                onBackPressed();
+                //Navigator.getNavigator().popFragmentBackStackToScene(GenesysTalentListScene.class.getName());
+            }
+        });
     }
 
     private void LoadTalent(Talent talent)
     {
-        name.setText(talent.getName());
-        tier.setText(talent.getTier().toString());
+        name.setText(TalentHelper.createNameSpannable(talent.getName()));
+        tier.setText(TalentHelper.createTierSpannable(talent.getTier().toString()));
         activation.setText(TalentHelper.createActivationSpannable(talent.getActivation()));
 
         if (talent.getRanked())
         {
-            ranked.setText("Yes");
+            ranked.setText(TalentHelper.createRankedSpannable("Yes"));
         }
         else
         {
-            ranked.setText("No");
+            ranked.setText(TalentHelper.createRankedSpannable("No"));
+
         }
 
         if (talent.getRequirement() != 0)
@@ -85,21 +102,31 @@ public class GenesysTalentScene extends Scene<GenesysTalentLogic>
         }
 
         description.setText(talent.getDescription());
-        keywords.setText(TalentHelper.createKeywordsSpannable(talent.getKeywords()));
-        //description.setText(TalentHelper.createDescriptionSpannable(getActivity().getAssets(), talent.getDescription()));
-        description.setText(talent.getDescription());
+
+        if (talent.hasKeywords())
+        {
+            keywords.setVisibility(View.VISIBLE);
+            keywords.setText(TalentHelper.createKeywordsSpannable(talent.getKeywords()));
+        }
+        else
+        {
+            keywords.setVisibility(View.GONE);
+        }
+
+        description.setText(TalentHelper.createDescriptionSpannable(getActivity().getAssets(), talent.getDescription()));
+        //description.setText(talent.getDescription());
         source.setText(TalentHelper.createSourceSpannable(talent.getSource()));
     }
 
     @Override
     public boolean onBackPressed()
     {
-        return false;
+        return Navigator.getNavigator().popFragmentBackStack();
     }
 
     @Override
     public void onClick(View view)
     {
-
+        Log.d("asd0", "asdasd");
     }
 }

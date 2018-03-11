@@ -4,6 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/genesys_background"
+    android:clickable="true"
+    android:focusable="true"
     android:orientation="vertical">
 
     <RelativeLayout
@@ -11,12 +13,13 @@
         android:layout_height="64dp"
         android:background="@color/colorPrimary">
 
-        <ImageView
-            android:id="@+id/back_button"
+        <Button
+            android:id="@+id/talent_back_button"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_centerVertical="true"
             android:layout_marginStart="6dp"
+            android:background="@color/white"
             android:src="@drawable/ic_arrow_back_48dp" />
 
         <LinearLayout
@@ -74,6 +77,7 @@
                 android:id="@+id/talent_tier"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:textSize="16sp"
                 tools:text="Tier: 1" />
 
@@ -81,6 +85,7 @@
                 android:id="@+id/talent_activation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:textSize="16sp"
                 tools:text="Activation: Passive" />
 
@@ -88,6 +93,7 @@
                 android:id="@+id/talent_ranked"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:textSize="16sp"
                 tools:text="Ranked: No" />
 
@@ -96,6 +102,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
+                android:textColor="@color/black"
                 android:textSize="16sp"
                 tools:text="Prerequisite: Defensive Sysops" />
 
@@ -103,6 +110,7 @@
                 android:id="@+id/talent_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:textSize="16sp"
 
                 tools:text="When attempting to defend a computer system against intrusion (or when someone attempts to hack a computer owned or programmed by your character) your character adds [td][td] to their opponent’s checks. If your character has access to the computer system when the intrusion takes place, they are automatically aware of the intrusion." />
@@ -111,7 +119,10 @@
                 android:id="@+id/talent_keywords"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:textSize="16sp"
+                android:visibility="gone"
+                tools:visibility="visible"
                 tools:text="Keywords: Computers, Hacking" />
 
             <TextView
@@ -119,6 +130,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:textColor="@color/black"
                 android:textSize="10sp"
                 tools:text="Source: GCRB" />
 

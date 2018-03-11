@@ -22,9 +22,9 @@ import eu.elieser.exalted.data.Charms;
  */
 public class CharmAdapter extends RecyclerView.Adapter<CharmAdapter.ChooseCharmViewHolder>
 {
-    private final List<CharmData> itemData = new ArrayList<>();
     private final Context context;
     private final CharmAdapterListener listener;
+    private final List<CharmData> itemData = new ArrayList<>();
 
     public CharmAdapter(Context context, CharmAdapterListener listener)
     {

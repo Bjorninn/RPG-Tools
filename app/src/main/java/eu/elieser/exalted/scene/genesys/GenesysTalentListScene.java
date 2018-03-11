@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import eu.elieser.exalted.R;
-import eu.elieser.exalted.adapters.CharmAdapter;
 import eu.elieser.exalted.adapters.DividerItemDecoration;
 import eu.elieser.exalted.adapters.GenesysTalentAdapter;
 import eu.elieser.exalted.logic.genesys.GenesysTalentListLogic;

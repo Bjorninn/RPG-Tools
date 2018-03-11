@@ -2,15 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp">
 
     <TextView
-        android:id="@+id/name"
+        android:id="@+id/talent_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ellipsize="end"
         android:maxLines="1"
+        android:layout_marginBottom="6dp"
         android:textColor="@color/genesys_headline_orange"
         android:textSize="21sp"
         android:textStyle="bold"
@@ -24,9 +26,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Tier: "
             android:textColor="@color/black"
-            android:textStyle="bold"
-            tools:text="Tier: " />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/talent_tier"
@@ -38,10 +40,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="6dp"
+            android:layout_marginStart="8dp"
+            android:text="Activation: "
             android:textColor="@color/black"
-            android:textStyle="bold"
-            tools:text="Activation: " />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/talent_activation"
@@ -53,10 +55,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="6dp"
+            android:layout_marginStart="8dp"
+            android:text="Ranked: "
             android:textColor="@color/black"
-            android:textStyle="bold"
-            tools:text="Ranked: " />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/talent_ranked"
@@ -68,7 +70,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/description"
+        android:id="@+id/talent_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ellipsize="end"

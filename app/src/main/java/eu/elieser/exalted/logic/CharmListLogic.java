@@ -23,8 +23,8 @@ import eu.elieser.exalted.scene.CharmListScene;
  */
 public class CharmListLogic extends Logic<CharmListScene> implements CharmAdapter.CharmAdapterListener
 {
-    CharmAdapter.CharmDataComparator comparator = new CharmAdapter.CharmDataComparator();
-    List<CharmAdapter.CharmData> charmData = new ArrayList<>();
+    private CharmAdapter.CharmDataComparator comparator = new CharmAdapter.CharmDataComparator();
+    private List<CharmAdapter.CharmData> charmData = new ArrayList<>();
 
     public CharmListLogic(CharmListScene scene, Context context)
     {

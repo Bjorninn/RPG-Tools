@@ -13,6 +13,7 @@ import java.util.List;
 import eu.elieser.exalted.genesys.CustomTypefaceSpan;
 
 import static eu.elieser.exalted.exalted.charms.CharmHelper.createBoldSpannable;
+import static eu.elieser.exalted.exalted.charms.CharmHelper.createUnderlineSpannable;
 
 /**
  * Created by bjornjonsson on 11/03/2018.
@@ -93,7 +94,7 @@ public class TalentHelper
     public static Spannable createKeywordsSpannable(List<String> strings)
     {
         String text = "Keywords: ";
-        String string = TextUtils.join(", ", strings);
+        String string = text + TextUtils.join(", ", strings);
 
         return createBoldSpannable(string, text.length());
     }
@@ -101,8 +102,13 @@ public class TalentHelper
     public static Spannable createSourceSpannable(List<String> strings)
     {
         String text = "Source: ";
-        String string = TextUtils.join(", ", strings);
+        String string = text + TextUtils.join(", ", strings);
 
         return createBoldSpannable(string, text.length());
+    }
+
+    public static Spannable createNameSpannable(String name)
+    {
+        return createUnderlineSpannable(name, name.length());
     }
 }

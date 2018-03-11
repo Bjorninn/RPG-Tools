@@ -9,6 +9,7 @@ import android.text.Spanned;
 import android.text.TextPaint;
 import android.text.style.ClickableSpan;
 import android.text.style.StyleSpan;
+import android.text.style.UnderlineSpan;
 import android.util.Log;
 import android.view.View;
 
@@ -270,6 +271,16 @@ public class CharmHelper
     public static Spannable createBoldSpannable(String cost, int end)
     {
         StyleSpan span = new StyleSpan(Typeface.BOLD);
+
+        Spannable spannable = new SpannableString(cost);
+        spannable.setSpan(span, 0, end, Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+
+        return spannable;
+    }
+
+    public static Spannable createUnderlineSpannable(String cost, int end)
+    {
+        UnderlineSpan span = new UnderlineSpan();
 
         Spannable spannable = new SpannableString(cost);
         spannable.setSpan(span, 0, end, Spanned.SPAN_INCLUSIVE_EXCLUSIVE);

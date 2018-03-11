@@ -1,7 +1,12 @@
 package eu.elieser.exalted.data.genesys;
 
+import android.content.Context;
+import android.util.SparseArray;
+
 import java.util.HashMap;
 import java.util.Map;
+
+import eu.elieser.exalted.data.JsonLoader;
 
 /**
  * Created by bjornjonsson on 11/03/2018.
@@ -13,13 +18,14 @@ public class GenesysDataStore
 
     private Talents talents;
     private Map<String, Talent> talentMap;
-    private Map<Integer, Talent> talentIdMap;
+    private SparseArray<Talent> talentIdMap;
 
     public GenesysDataStore()
     {
         instance = this;
         talentMap = new HashMap<>();
-        talentIdMap = new HashMap<>();
+//        talentIdMap = new HashMap<>();
+        talentIdMap = new SparseArray<>();
     }
 
 
@@ -53,5 +59,11 @@ public class GenesysDataStore
     public Talents getTalents()
     {
         return talents;
+    }
+
+    public void loadTalentData(Context context)
+    {
+        Talents talents = JsonLoader.genesysTalentsFromJson(context);
+        setTalents(talents);
     }
 }

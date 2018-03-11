@@ -9,6 +9,7 @@ import eu.elieser.exalted.exalted.charms.CharmTree;
 import eu.elieser.exalted.navigation.Navigator;
 import eu.elieser.exalted.scene.ExaltedHomeScene;
 import eu.elieser.exalted.scene.Scene;
+import eu.elieser.exalted.scene.genesys.GenesysTalentListScene;
 
 public class MainActivity extends FragmentActivity
 {
@@ -25,9 +26,11 @@ public class MainActivity extends FragmentActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Scene scene = new ExaltedHomeScene();
+//        Scene scene = new ExaltedHomeScene();
+        Scene scene = new GenesysTalentListScene();
 
         dataStore.loadCharmData(this);
+        genesysDataStore.loadTalentData(this);
 
         charmTree.initialize(dataStore.getCharms());
         charmTree.initialize(dataStore.getMaCharms());

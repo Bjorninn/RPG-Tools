@@ -10,10 +10,12 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 import eu.elieser.exalted.R;
 import eu.elieser.exalted.data.genesys.Talent;
+import eu.elieser.exalted.genesys.talents.TalentHelper;
 
 /**
  * Created by Bjorn on 3/11/2018.
@@ -44,8 +46,8 @@ public class GenesysTalentAdapter extends RecyclerView.Adapter<GenesysTalentAdap
     {
         Talent talent = itemData.get(position);
 
-        holder.name.setText(talent.getName());
-        holder.tier.setText(talent.getTier());
+        holder.name.setText(TalentHelper.createNameSpannable(talent.getName()));
+        holder.tier.setText(talent.getTier().toString());
         holder.ranked.setText(talent.getRanked().toString());
         holder.activation.setText(talent.getActivation());
         holder.description.setText(talent.getDescription());
@@ -54,7 +56,13 @@ public class GenesysTalentAdapter extends RecyclerView.Adapter<GenesysTalentAdap
     @Override
     public int getItemCount()
     {
-        return 0;
+        return itemData.size();
+    }
+
+    @Override
+    public int getItemViewType(int position)
+    {
+        return R.layout.widget_genesys_talent_list_entry;
     }
 
     public void setData(List<Talent> data)
@@ -103,5 +111,27 @@ public class GenesysTalentAdapter extends RecyclerView.Adapter<GenesysTalentAdap
     public static interface GenesysTalentAdapterListener
     {
         void onItemClicked(String charmName);
+    }
+
+    public static class TalentDataComparator implements Comparator<Talent>
+    {
+        @Override
+        public int compare(Talent t1, Talent t2)
+        {
+            int compare = t1.getTier().compareTo(t2.getTier());
+
+            if (compare == 0)
+            {
+                compare = t1.getName().compareTo(t2.getName());
+            }
+
+            return compare;
+        }
+
+        @Override
+        public boolean equals(Object o)
+        {
+            return false;
+        }
     }
 }
