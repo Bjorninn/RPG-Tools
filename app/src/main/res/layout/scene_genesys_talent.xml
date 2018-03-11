@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/genesys_background"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="@color/colorPrimary">
+
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="6dp"
+            android:src="@drawable/ic_arrow_back_48dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/prev_talent_btn"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="24dp"
+                android:src="@drawable/ic_arrow_back_48dp" />
+
+            <ImageView
+                android:id="@+id/next_talent_btn"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="6dp"
+                android:scaleX="-1"
+                android:src="@drawable/ic_arrow_back_48dp" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/talent_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:textColor="@color/genesys_headline_orange"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="Defensive Sysops (Improved)" />
+
+            <TextView
+                android:id="@+id/talent_tier"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                tools:text="Tier: 1" />
+
+            <TextView
+                android:id="@+id/talent_activation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                tools:text="Activation: Passive" />
+
+            <TextView
+                android:id="@+id/talent_ranked"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                tools:text="Ranked: No" />
+
+            <TextView
+                android:id="@+id/talent_prerequisite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:textSize="16sp"
+                tools:text="Prerequisite: Defensive Sysops" />
+
+            <TextView
+                android:id="@+id/talent_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+
+                tools:text="When attempting to defend a computer system against intrusion (or when someone attempts to hack a computer owned or programmed by your character) your character adds [td][td] to their opponent’s checks. If your character has access to the computer system when the intrusion takes place, they are automatically aware of the intrusion." />
+
+            <TextView
+                android:id="@+id/talent_keywords"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                tools:text="Keywords: Computers, Hacking" />
+
+            <TextView
+                android:id="@+id/talent_source"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textSize="10sp"
+                tools:text="Source: GCRB" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

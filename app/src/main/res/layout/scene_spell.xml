@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:clickable="true"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/circle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                tools:text="Terrestrial Circle Spell"/>
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:textColor="@color/headline_blue"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="Cirrus Skiff"/>
+
+            <TextView
+                android:id="@+id/cost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:textColor="@color/black"
+                tools:text="Cost: 15sm, 1wp"/>
+
+            <TextView
+                android:id="@+id/type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:textColor="@color/black"
+                tools:text="Type: Simple"/>
+
+            <TextView
+                android:id="@+id/keywords"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:textColor="@color/black"
+                tools:text="Keywords: None"/>
+
+            <TextView
+                android:id="@+id/duration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:textColor="@color/black"
+                tools:text="Duration: Until Ended"/>
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:textColor="@color/black"
+                tools:text="The sorcerer calls down a Cirrus Skiff to bear her skyward, a small white puffy cloud just large enough for her and one other passenger to ride upon. The cloud descends from the sky and hovers near the sorcerer like a faithful puppy until she steps on, at which point it rises into the air, obeying her mental commands. It is slow-moving, managing a pace of only (Essence x 6) miles per hour, but is virtually unlimited in its flight capability, able to rise upward with no limit other than the ability of its caster to endure the rarefied air of the upper atmosphere. In combat, the sorcerer rolls (Wits + Occult) in place of standard movement rolls to mentally direct the cloud, but otherwise faces no complications or penalties."/>
+
+            <TextView
+                android:id="@+id/distortion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:textColor="@color/black"
+                android:visibility="gone"
+                tools:text="Distortion (Goal Number: 15): Distorting this curse makes it possible for the victim to speak around the forbidden subject matter for five minutes. He must speak using circumlocutions, flowery metaphors, or cryptic symbolism to communicate the broad gist of the topic, and cannot go into any level of detail beyond the most superficial. This does not avert the inevitable tide of maggots, but gives the victim enough time to speak before he must disgorge them."
+                tools:visibility="visible"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

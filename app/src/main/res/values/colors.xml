@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2196F3</color>
+    <color name="colorPrimaryDark">#1976D2</color>
+    <color name="colorAccent">#3F51B5</color>
+
+    <color name="sub_headline_gray">#505D68</color>
+    <color name="headline_blue">#2170B8</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="dnd_red">#58170D</color>
+    <color name="dnd_red_faded">#B358170D</color>
+
+    <color name="debug_gray">#DBC9E6</color>
+
+    <color name="genesys_background">#F8F6F2</color>
+    <color name="genesys_headline_orange">#F16C2F</color>
+
+
+
+
+</resources>

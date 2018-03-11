@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Exalted</string>
+    <string name="essence">Essence</string>
+    <string name="cd_button_icon">button icon</string>
+    <string name="exalted">Exalted</string>
+    <string name="solar_charms">Solar Charms</string>
+    <string name="martial_arts">Martial Arts</string>
+    <string name="spells">Spells</string>
+    <string name="ok">OK</string>
+    <string name="level">Level</string>
+</resources>

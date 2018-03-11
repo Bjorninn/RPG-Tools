@@ -1,0 +1,6 @@
+<resources>
+    <declare-styleable name="IconButton">
+        <attr name="android:text"/>
+        <attr name="android:src"/>
+    </declare-styleable>
+</resources>

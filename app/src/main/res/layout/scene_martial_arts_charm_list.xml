@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:clickable="true"
+                android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/filter_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@+id/essence_group"
+            android:background="@color/colorPrimaryDark"
+            android:padding="3dp">
+
+            <Spinner
+                android:id="@+id/style"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@color/colorAccent"
+                android:textAlignment="textStart"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/essence_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="12dp"
+            android:background="@color/colorPrimaryDark"
+            android:padding="3dp">
+
+            <TextView
+                android:id="@+id/essence"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:background="@color/colorAccent"
+                android:gravity="center|end"
+                android:paddingEnd="8dp"
+                android:paddingStart="8dp"
+                android:text="@string/essence"
+                android:textColor="@color/white"
+                android:textSize="21sp"/>
+
+            <Spinner
+                android:id="@+id/essence_score"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="3dp"
+                android:background="@color/colorAccent"
+                android:gravity="center"
+                android:textAlignment="center"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/filter_group"
+        android:background="@color/sub_headline_gray"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/charm_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/line"
+        android:padding="6dp"/>
+
+</RelativeLayout>

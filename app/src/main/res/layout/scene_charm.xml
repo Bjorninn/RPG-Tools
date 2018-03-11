@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--<Toolbar android:id="@+id/toolbar"-->
+    <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginBottom="4dp"-->
+    <!--android:background="@color/colorPrimary"-->
+    <!--android:minHeight="?android:attr/actionBarSize"-->
+    <!--android:navigationIcon="@drawable/ic_arrow_back_48dp"-->
+    <!--android:title="@string/solar_charms"-->
+    <!--android:titleTextColor="@color/white"/>-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="@color/colorPrimary">
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="6dp"
+            android:src="@drawable/ic_arrow_back_48dp"/>
+
+        <CheckBox
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="6dp"/>
+
+    </RelativeLayout>
+
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:clickable="true"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                tools:text="Righteus Devil Style"
+                tools:visibility="visible"/>
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:textColor="@color/headline_blue"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="Frugal Merchant Method"/>
+
+            <TextView
+                android:id="@+id/cost_and_mins"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:textColor="@color/black"
+                tools:text="Cost: 5m, 1wp; Mins: Craft 5, Essence 5"/>
+
+            <TextView
+                android:id="@+id/type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:textColor="@color/black"
+                tools:text="Type: Simple"/>
+
+            <TextView
+                android:id="@+id/keywords"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:textColor="@color/black"
+                tools:text="Keywords: None"/>
+
+            <TextView
+                android:id="@+id/duration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:textColor="@color/black"
+                tools:text="Duration: Instant"/>
+
+            <TextView
+                android:id="@+id/prerequisite_charms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:textColor="@color/black"
+                tools:text="Prerequisite Charms: Bureau-Rectifying Method, Enigmatic Bureau Understanding"/>
+
+            <TextView
+                android:id="@+id/unlocks_charms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="18dp"
+                android:textColor="@color/black"
+                tools:text="Unlocks Charms: Evidence-Discerning Method, Judge’s Ear Technique"/>
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:textColor="@color/black"
+                tools:text="With a cursory examination, the Lawgiver can determine the exact quality of any good offered for sale. She can tell if it is in poor, average, or excellent condition. However, this grants her no knowledge of the market value of any particular good, nor does it tell her the purpose of an object. By inspecting a scavenged mechanism of the First Age, she could tell if it was functional, but not how it functions."/>
+
+            <TextView
+                android:id="@+id/special_activation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:textColor="@color/black"
+                android:visibility="gone"
+                tools:text="Special activation rules: Whenever the martial artist makes a withering attack which lowers an enemy’s current Initiative value from greater than her own to less than her own, she may reflexively activate Snake Form."
+                tools:visibility="visible"/>
+
+            <TextView
+                android:id="@+id/terrestrial"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:textColor="@color/black"
+                android:visibility="visible"
+                tools:text="Terrestrial: A Dragon-Blood may only use this Charm once per scene, unless she resets it by dealing 3+ levels of damage with a Snake style decisive attack and then builds back up to Initiative 12+."
+                tools:visibility="visible"/>
+
+            <TextView
+                android:id="@+id/mastery"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:visibility="gone"
+                tools:text="Mastery: Successfully evading an attack after using this Charm cumulatively lowers the cost of subsequent activations of it by one mote until the martial artist’s next turn."
+                tools:visibility="visible"/>
+
+            <Button
+                android:id="@+id/back_button"
+                android:layout_width="164dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="24dp"
+                android:background="@color/headline_blue"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp"
+                android:text="Back to Charms"
+                android:textAlignment="center"
+                android:textColor="@color/white"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>
