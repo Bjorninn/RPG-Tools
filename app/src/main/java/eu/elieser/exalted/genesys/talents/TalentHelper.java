@@ -25,6 +25,7 @@ import static eu.elieser.exalted.exalted.charms.CharmHelper.createUnderlineSpann
 public class TalentHelper
 {
     private static List<String> symbols = new ArrayList<>(10);
+    private static List<String> symbols2 = new ArrayList<>(10);
     private static Map<String, String> letters = new HashMap<>();
 
     public static void initalize()
@@ -37,6 +38,15 @@ public class TalentHelper
         symbols.add("[FA]"); // Failure Symbol
         symbols.add("[TR]"); // Triumph Symbol
         symbols.add("[DE]"); // Despair Symbol
+
+        symbols2.add("\\[BO\\]"); // Bonus Die
+        symbols2.add("\\[SE\\]"); // Setback Die
+        symbols2.add("\\[AD\\]"); // Advantage Symbol
+        symbols2.add("\\[TH\\]"); // Threat Symbol
+        symbols2.add("\\[SU\\]"); // Success Symbol
+        symbols2.add("\\[FA\\]"); // Failure Symbol
+        symbols2.add("\\[TR\\]"); // Triumph Symbol
+        symbols2.add("\\[DE\\]"); // Despair Symbol
 
         letters.put("[BO]", "j");
         letters.put("[SE]", "j");
@@ -66,59 +76,22 @@ public class TalentHelper
         }
 
         // 2. replace each found symbol with its letter
-//        for (String symbol : symbols)
-//        {
-//            Log.d("RAG", symbol);
-//
-//            text = text.replaceAll(symbol, letters.get(symbol));
-//
-//            Log.d("TAG", text);
-//        }
-//
-       Spannable spannable = new SpannableString(text);
-//        Typeface font = Typeface.createFromAsset(assetManager, "GenesysGlyphs.ttf");
-//
-//        // 3. each index is now (index - (i * 3))
-//        for (int i = 0; i < indices.size(); i++)
-//        {
-//            int index = indices.get(i);
-//
-//            CustomTypefaceSpan span = new CustomTypefaceSpan(font);
-//            spannable.setSpan(span, (index - (i * 3)), index + 1, Spanned.SPAN_INCLUSIVE_INCLUSIVE);
-//        }
+        for (String symbol : symbols)
+        {
+            text = text.replace(symbol, letters.get(symbol));
+        }
 
-
-//        for (String symbol : symbols)
-//        {
-//            int index = text.indexOf(symbol);
-//
-//            Log.d("TAG", index + "");
-//
-//            while (index >= 0)
-//            {
-//                System.out.println(index);
-//                CustomTypefaceSpan span = new CustomTypefaceSpan(font);
-//
-//
-//                spannable.setSpan(span, index, index + 2, Spanned.SPAN_INCLUSIVE_INCLUSIVE);
-//
-//                index = text.indexOf(symbol, index + 1);
-//
-//                Log.d("TAG", index + "");
-//
-//            }
-//        }
-
-        return spannable;
-    }
-
-    public static Spannable testFont(AssetManager assetManager, String text)
-    {
         Spannable spannable = new SpannableString(text);
         Typeface font = Typeface.createFromAsset(assetManager, "GenesysGlyphs.ttf");
-        CustomTypefaceSpan span = new CustomTypefaceSpan(font);
 
-        spannable.setSpan(span, 0, text.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+        // 3. each index is now (index - (i * 3)) as we changed symbols like [BO] to b
+        for (int i = 0; i < indices.size(); i++)
+        {
+            int index = indices.get(i) - (i * 3);
+
+            CustomTypefaceSpan span = new CustomTypefaceSpan(font);
+            spannable.setSpan(span, index, index + 1, Spanned.SPAN_INCLUSIVE_INCLUSIVE);
+        }
 
         return spannable;
     }

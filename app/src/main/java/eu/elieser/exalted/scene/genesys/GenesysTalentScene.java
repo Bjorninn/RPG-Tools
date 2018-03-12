@@ -74,7 +74,6 @@ public class GenesysTalentScene extends Scene<GenesysTalentLogic>
             public void onClick(View view)
             {
                 onBackPressed();
-                //Navigator.getNavigator().popFragmentBackStackToScene(GenesysTalentListScene.class.getName());
             }
         });
     }
@@ -98,7 +97,12 @@ public class GenesysTalentScene extends Scene<GenesysTalentLogic>
         if (talent.getRequirement() != 0)
         {
             Talent prereqTalent = GenesysDataStore.getInstance().getTalent(talent.getRequirement());
+            prerequisite.setVisibility(View.VISIBLE);
             prerequisite.setText(TalentHelper.createPrerequisiteSpannable(prereqTalent.getName()));
+        }
+        else
+        {
+            prerequisite.setVisibility(View.GONE);
         }
 
         description.setText(talent.getDescription());
