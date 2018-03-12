@@ -11,6 +11,7 @@ import eu.elieser.exalted.adapters.GenesysTalentAdapter;
 import eu.elieser.exalted.data.BundleKeys;
 import eu.elieser.exalted.data.genesys.GenesysDataStore;
 import eu.elieser.exalted.data.genesys.Talent;
+import eu.elieser.exalted.genesys.talents.TalentHelper;
 import eu.elieser.exalted.logic.Logic;
 import eu.elieser.exalted.navigation.Navigator;
 import eu.elieser.exalted.scene.genesys.GenesysTalentListScene;
@@ -28,6 +29,7 @@ public class GenesysTalentListLogic extends Logic<GenesysTalentListScene> implem
     public GenesysTalentListLogic(GenesysTalentListScene scene, Context context)
     {
         super(scene, context);
+        TalentHelper.initalize();
     }
 
     public void loadTalentData()

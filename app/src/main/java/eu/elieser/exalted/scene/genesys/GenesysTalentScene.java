@@ -114,6 +114,7 @@ public class GenesysTalentScene extends Scene<GenesysTalentLogic>
         }
 
         description.setText(TalentHelper.createDescriptionSpannable(getActivity().getAssets(), talent.getDescription()));
+        //description.setText(TalentHelper.testFont(getActivity().getAssets(), talent.getDescription()));
         //description.setText(talent.getDescription());
         source.setText(TalentHelper.createSourceSpannable(talent.getSource()));
     }
