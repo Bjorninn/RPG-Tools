@@ -29,7 +29,7 @@ public class GenesysTalentListLogic extends Logic<GenesysTalentListScene> implem
     public GenesysTalentListLogic(GenesysTalentListScene scene, Context context)
     {
         super(scene, context);
-        TalentHelper.initalize();
+        TalentHelper.initialize(context.getAssets());
     }
 
     public void loadTalentData()
@@ -52,10 +52,11 @@ public class GenesysTalentListLogic extends Logic<GenesysTalentListScene> implem
     }
 
     @Override
-    public void onItemClicked(String charmName)
+    public void onItemClicked(String charmName, int position)
     {
         Bundle bundle = new Bundle();
         bundle.putString(BundleKeys.NAME, charmName);
+        bundle.putInt(BundleKeys.POSITION, position);
 
         Navigator.getNavigator().navigationEvent(GenesysTalentScene.class, bundle);
     }

@@ -76,6 +76,16 @@ public class GenesysTalentScene extends Scene<GenesysTalentLogic>
                 onBackPressed();
             }
         });
+
+        ImageView prevTalentButton = view.findViewById(R.id.prev_talent_btn);
+        prevTalentButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+
+            }
+        });
     }
 
     private void LoadTalent(Talent talent)
@@ -117,7 +127,7 @@ public class GenesysTalentScene extends Scene<GenesysTalentLogic>
             keywords.setVisibility(View.GONE);
         }
 
-        description.setText(TalentHelper.createDescriptionSpannable(getActivity().getAssets(), talent.getDescription()));
+        description.setText(TalentHelper.createDescriptionSpannable(talent.getDescription()));
         //description.setText(TalentHelper.testFont(getActivity().getAssets(), talent.getDescription()));
         //description.setText(talent.getDescription());
         source.setText(TalentHelper.createSourceSpannable(talent.getSource()));

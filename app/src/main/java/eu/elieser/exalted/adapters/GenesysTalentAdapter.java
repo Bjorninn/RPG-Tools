@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -21,7 +22,7 @@ import eu.elieser.exalted.genesys.talents.TalentHelper;
  * Created by Bjorn on 3/11/2018.
  */
 
-public class GenesysTalentAdapter extends RecyclerView.Adapter<GenesysTalentAdapter.ChooseTalentViewHolder>
+public class GenesysTalentAdapter extends RecyclerView.Adapter<GenesysTalentAdapter.ChooseTalentViewHolder> implements Serializable
 {
     private final Context context;
     private final GenesysTalentAdapterListener listener;
@@ -46,6 +47,7 @@ public class GenesysTalentAdapter extends RecyclerView.Adapter<GenesysTalentAdap
     {
         Talent talent = itemData.get(position);
 
+        holder.position = position;
         holder.name.setText(TalentHelper.createNameSpannable(talent.getName()));
         holder.tier.setText(talent.getTier().toString());
         holder.ranked.setText(talent.getRanked().toString());
@@ -80,8 +82,14 @@ public class GenesysTalentAdapter extends RecyclerView.Adapter<GenesysTalentAdap
         });
     }
 
+    public Talent getTalent(int position)
+    {
+        return itemData.get(position);
+    }
+
     public class ChooseTalentViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
     {
+        public int position;
         public TextView name;
         public TextView tier;
         public TextView ranked;
@@ -104,13 +112,13 @@ public class GenesysTalentAdapter extends RecyclerView.Adapter<GenesysTalentAdap
         @Override
         public void onClick(View view)
         {
-            listener.onItemClicked(name.getText().toString());
+            listener.onItemClicked(name.getText().toString(), position);
         }
     }
 
-    public static interface GenesysTalentAdapterListener
+    public interface GenesysTalentAdapterListener
     {
-        void onItemClicked(String charmName);
+        void onItemClicked(String talentName, int position);
     }
 
     public static class TalentDataComparator implements Comparator<Talent>
